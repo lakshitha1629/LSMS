@@ -367,7 +367,9 @@ public class UserActivation extends javax.swing.JFrame {
         String activated = jRadioButton1.isSelected()?"1":"0";
         String username = jTextField2.getText();
         String person = jTextField1.getText();
-        
+        if(activated.isEmpty()){
+            JOptionPane.showMessageDialog(this, "Please select activate or deactivate");
+        }else{
         try {
             Statement stmt = new DB().getConnection().createStatement();
             String query = "UPDATE `userdetails` SET activated='"+activated+"' WHERE username='"+username+"' && person='"+person+"'";
@@ -397,7 +399,7 @@ public class UserActivation extends javax.swing.JFrame {
        
        
         
-        
+        }
         
         
     }//GEN-LAST:event_jButton3ActionPerformed

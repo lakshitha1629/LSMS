@@ -371,6 +371,7 @@ public class TimeTables extends javax.swing.JFrame {
       String Semester=jComboBox3.getSelectedItem().toString();
         
         
+      if(!(DegreeProgramme.isEmpty() || Year.isEmpty() || Semester.isEmpty())){
      if(DegreeProgramme=="Industrial Information Technology" && Year=="2nd Year" && Semester=="2nd Semester"){
            new timeTable.IIT_2ndYr_2ndSem().setVisible(true);
       
@@ -385,6 +386,9 @@ public class TimeTables extends javax.swing.JFrame {
      }else if(DegreeProgramme=="Science & Technology" && Year=="1st Year" && Semester=="2nd Semester"){
             new timeTable.SCT_1stYr_1stSem().setVisible(true);
      }
+      }else{
+          JOptionPane.showMessageDialog(this, "Please select year semester and degree programes");
+      }
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jRadioButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton5ActionPerformed
