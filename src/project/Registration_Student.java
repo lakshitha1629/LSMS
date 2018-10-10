@@ -377,6 +377,7 @@ public class Registration_Student extends javax.swing.JFrame {
         String contact = jTextField7.getText();
         String person="Student";
         
+        if(!(username.isEmpty() || name.isEmpty() || password.isEmpty() || Re_password.isEmpty() || Reg_no.isEmpty() || NIC.isEmpty() || email.isEmpty() || contact.isEmpty())){
            try{
              String encryptedPassword = AESCrypt.encrypt(password);
              Statement stmt = new DB().getConnection().createStatement();
@@ -411,7 +412,9 @@ public class Registration_Student extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(rootPane,e.getMessage());
         }
 
-        
+        }else{
+            JOptionPane.showMessageDialog(this, "Please Add the fields");
+        }
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
