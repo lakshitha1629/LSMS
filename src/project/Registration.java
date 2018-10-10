@@ -198,13 +198,16 @@ public class Registration extends javax.swing.JFrame {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
+
+
+
         String username = jTextField1.getText();
         String password = String.valueOf(jPasswordField2.getPassword());
         String Re_password = String.valueOf(jPasswordField1.getPassword());
         String person = jComboBox1.getSelectedItem().toString();
         String email = jTextField2.getText();
         String contact = jTextField3.getText();
-        
+        if(!(username.isEmpty() || password.isEmpty() || Re_password.isEmpty() || person.isEmpty() || email.isEmpty() || contact.isEmpty())){
           try{
              String encryptedPassword = AESCrypt.encrypt(password);
              Statement stmt = new DB().getConnection().createStatement();
@@ -230,11 +233,15 @@ public class Registration extends javax.swing.JFrame {
             
          }
          
-         
+      
     
      }catch(Exception e){
                 JOptionPane.showMessageDialog(rootPane,e.getMessage());
         }
+              }else{
+                  JOptionPane.showMessageDialog(this, "Pelase enter All fields");
+                  
+                  }
         
     }//GEN-LAST:event_jButton2ActionPerformed
 
