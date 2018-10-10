@@ -367,7 +367,7 @@ public class UserActivation extends javax.swing.JFrame {
         String activated = jRadioButton1.isSelected()?"1":"0";
         String username = jTextField2.getText();
         String person = jTextField1.getText();
-        if(activated.isEmpty()){
+        if(activated.isEmpty() || username.isEmpty() || person.isEmpty() ){
             JOptionPane.showMessageDialog(this, "Please select activate or deactivate");
         }else{
         try {
