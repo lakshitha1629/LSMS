@@ -153,6 +153,8 @@ public class Login extends javax.swing.JFrame {
         String password = String.valueOf(jPasswordField1.getPassword());
         String name=jLabel8.getText();
 
+        
+        if(!(username.isEmpty() || password.isEmpty() || name.isEmpty())){
         try {
             String encryptedPassword = AESCrypt.encrypt(password);
             Statement stmt = new DB().getConnection().createStatement();
@@ -175,18 +177,22 @@ public class Login extends javax.swing.JFrame {
               
                     }else{
                     }
-                    
+                
                 } else {
                     JOptionPane.showMessageDialog(rootPane, "Your account is not activated. Please inform to your Administrator");
                 }
+                
             } else {
                 JOptionPane.showMessageDialog(rootPane, "Invalid Login, Try with Correct Username & Password");
             }
         } catch (Exception e) {
             //JOptionPane.showMessageDialog(rootPane, e.getMessage());
         }
-             
         
+             
+        }else{
+            JOptionPane.showMessageDialog(this, "Please fill the fields");
+        }
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jLabel4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel4MouseClicked
