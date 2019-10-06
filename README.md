@@ -1,7 +1,7 @@
 # LSMS
 Lecture schedule management system- It use full to schedule the timetable and lecture halls in UWU (Uva Wellassa University).
 
-LSMS will help to,
+Lecture schedule management system will help to,
  1. View time tables.
  2. Viwe availability of lecture halls.
  3. Viwe facilities in lecture halls.
