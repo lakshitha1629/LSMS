@@ -9,7 +9,3 @@ Lecture schedule management system will help to,
  5. Allocate lecture halls.
  6. Make aware of student about extra and canceled letures.
   
-
-
-
-this is very important for lectures to schedule their time very easily.
